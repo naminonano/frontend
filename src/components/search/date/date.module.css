@@ -1,0 +1,63 @@
+.Dateoutsidebox {
+	order: 4;
+	width: 30%;
+	height: 100%;
+	display: flex;
+	margin: 0;
+}
+.Datebox {
+	width: 50%;
+	height: 100%;
+	margin: 0;
+	/* padding-bottom: ; */
+	/* border-radius: 30px; */
+	box-sizing: border-box;
+	order: 4;
+	/* border: 2px solid #7eeeaa; */
+	text-align: left;
+	border-right: 2px solid #cdcdcd;
+}
+/* input {
+	color: transparent;
+	text-shadow: #7d7d7d;
+} */
+.From {
+	order: 0;
+}
+.To {
+	order: 1;
+	border: none;
+	border-radius: 0 10px 10px 0;
+}
+
+.Datebox:hover {
+	cursor: pointer;
+	background-color: rgb(230, 230, 230);
+}
+.Datebox:focus {
+	/* background-color: white; */
+	/* border: 4px solid #7eeeaa; */
+	outline: none;
+	box-sizing: border-box;
+}
+.Datebox:active {
+	outline: none;
+}
+.Placeholder {
+	margin: 0;
+	height: 30%;
+	font-size: 100%;
+	box-sizing: border-box;
+	color: rgb(156, 156, 156);
+	font-weight: lighter;
+	padding-left: 15%;
+}
+.Text {
+	margin: 0;
+	height: 70%;
+	font-size: 150%;
+	box-sizing: border-box;
+	color: rgb(156, 156, 156);
+	font-weight: bolder;
+	padding-left: 15%;
+}

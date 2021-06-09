@@ -1,0 +1,110 @@
+.input {
+	/* box-sizing: border-box; */
+	font-size: large !important;
+}
+input[type="text"] {
+	font-size: 150%;
+}
+
+.input:hover {
+	background-color: rgb(230, 230, 230);
+	cursor: pointer;
+}
+
+input:focus {
+	background-color: rgb(230, 230, 230);
+	/* border: 4px solid #7eeeaa; */
+	outline: none;
+	box-sizing: border-box;
+}
+input:active {
+	outline: none;
+}
+.Placeholder {
+	margin: 0;
+	height: 30%;
+	font-size: 100%;
+	box-sizing: border-box;
+	border: solid blanchedalmond;
+	color: rgb(156, 156, 156);
+	font-weight: lighter;
+	padding-left: 10%;
+}
+.Departure {
+	color: #7d7d7d;
+	border-radius: 10px 0 0 10px;
+	/* border-radius: 30px 0 0 30px; */
+	width: 100%;
+	padding: 0 5%;
+	font-weight: bolder;
+	/* margin: auto; */
+	/* background-color: violet; */
+	height: 100%;
+	box-sizing: border-box;
+	border: none;
+}
+.Departure:hover {
+	background-color: rgb(230, 230, 230);
+	cursor: pointer;
+}
+.Departure:focus {
+	height: 100%;
+}
+.Departurebox {
+	border-radius: 10px 0 0 10px;
+
+	border-right: 2px solid #cdcdcd;
+
+	/* background-color: wheat; */
+	order: 0;
+	height: 100%;
+	width: 70%;
+}
+.Arrivalbox {
+	order: 2;
+
+	width: 30%;
+}
+.Arrival {
+	box-sizing: border-box;
+	order: 2;
+	color: #7d7d7d;
+	border-radius: 30px;
+	border: 2px solid #7eeeaa;
+	width: 100%;
+	height: 100%;
+	padding: 0 5%;
+	font-weight: bolder;
+}
+.Arrival:hover {
+	background-color: rgb(240, 240, 240);
+	cursor: pointer;
+}
+.Filterbox {
+	background-color: rgb(255, 253, 253);
+	box-shadow: 0px 0px 2px 2px rgb(109, 109, 109);
+	margin-top: 1%;
+	height: 40vh;
+	width: 36%;
+	overflow: auto;
+	margin-left: 20%;
+	border-radius: 20px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	z-index: 20;
+}
+.Filterlist {
+	font-size: 150%;
+	margin: 0;
+	text-align: left;
+	padding: 4% 7%;
+	width: 100%;
+	box-sizing: border-box;
+}
+.Filterlist:hover {
+	box-sizing: border-box;
+	cursor: pointer;
+	background-color: rgb(230, 230, 230);
+}

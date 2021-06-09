@@ -1,0 +1,69 @@
+maxpercat = 2
+
+def f ():
+  daydict ={}
+  
+  inp ={1: 180, 2: 180, 3: 180, 4: 120, 5: 180, 6: 180, 15: 180, 20: 120, 22: 60, 49: 180, 55: 60, 57: 120, 36: 180, 38: 120, 10: 120, 24: 120, 29: 60, 11: 60, 18: 180, 17: 120, 8: 180}
+  unselected = dict(inp)
+  maxminute = 700
+  day =1
+  while len(unselected) >0 :
+    catdict={}
+    usemin = 0
+    
+    rand = (list(unselected.keys()))[0]
+    print('day:',day)
+
+    daydict[day] = [rand]
+    usemin+= inp[rand]
+    catdict[locationinfodf.loc[rand,'type']] = 1
+    latestl = rand
+    while True and len(unselected)>0:
+      if latestl in unselected:
+        unselected.pop(latestl)
+      durationlist = getduration(latestl,unselected)
+      # print('use',usemin)
+      for l in durationlist:
+        
+        m = converttomin( l['duration'] )
+
+        if l['stay']+ m + usemin <=maxminute and catdict.get(locationinfodf.loc[l['locationid'],'type'],0) < 2:
+          usemin+=m
+          usemin+=l['stay']
+          a =daydict[day]
+          a.append(l['locationid'])
+          ty =locationinfodf.loc[l['locationid'],'type']
+          catdict[ty] = catdict.get(ty,0) +1
+          daydict[day] = a
+         
+          unselected.pop(l['locationid'])
+          # print(l['stay'],m)
+          # print('add',daydict)
+         
+          
+          # print(all)
+          shouldnextday =False
+          break
+        shouldnextday =True
+      if shouldnextday :
+        break
+      
+
+   
+    print(daydict[int(day)])
+    print([locationinfodf.loc[x,'name'] for x in daydict[int(day)] ])
+    print(catdict)
+    day+=1
+  return daydict
+
+plan =f()
+
+
+
+def converttomin (st):
+  if 'hours' in st:
+          st = st.split('hours')
+          m =(int(st[0])*60) + int(st[1].split('mins')[0])
+  else :
+    m = int(st.split('mins')[0])
+  return m

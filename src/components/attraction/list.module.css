@@ -1,0 +1,27 @@
+.list {
+	padding: 20px;
+	height: 100px;
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	align-items: flex-start;
+}
+.listbox {
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.yellow {
+	color: yellow;
+}
+.grey {
+	color: gray;
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+}

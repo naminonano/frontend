@@ -1,0 +1,51 @@
+th {
+	width: 14%;
+}
+td {
+	width: 14%;
+	border: none;
+}
+tr {
+	height: 14%;
+	margin: 0%;
+	/* border: solid black;
+	background-color: blueviolet; */
+}
+.Realdate:hover {
+	border-radius: 50px;
+	background-color: #fd6b6c;
+	cursor: pointer;
+	z-index: 5;
+}
+
+table {
+	/* border-spacing: 0px; */
+	width: 95%;
+	height: 320px;
+	margin: auto;
+	border-collapse: collapse !important;
+}
+.Yesterday {
+	color: #bdbaba;
+	pointer-events: none;
+}
+.Selecteddate {
+	z-index: 5;
+
+	background-color: #fd6b6c !important;
+}
+.Selecteddate:hover {
+	cursor: pointer;
+}
+.From {
+	border-radius: 200px 0 0 200px;
+}
+.To {
+	border-radius: 0 200px 200px 0;
+}
+.Rangedate {
+	/* height: 100%; */
+	z-index: 3;
+	background-color: rgb(235, 235, 235);
+	/* border-radius: 0px !important; */
+}

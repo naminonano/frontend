@@ -1,0 +1,12 @@
+{
+    "prettier.useTabs": true,
+    "prettier.trailingComma": "none"
+    ,"synthwave84.brightness": "0.2"
+    ,"editor.fontSize": 22
+    ,"editor.fontFamily": "Victor Mono"
+    ,"editor.fontWeight":"Thin",
+
+"editor.fontLigatures": true,
+"editor.formatOnSave": true
+
+}

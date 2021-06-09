@@ -1,0 +1,86 @@
+.Box {
+	width: 80%;
+	height: 200px;
+	background-color: #ffffff;
+	margin-bottom: 1% !important;
+	margin: 5% auto;
+
+	border-radius: 20px;
+
+	/* border: 2px solid #7eeeaa; */
+	align-self: center;
+	font-size: 10px;
+	box-shadow: 2px 2px 2px 2px #031136;
+	background-color: #031136;
+	/* top: 5%; */
+	/* left: 10%; */
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	/* align-items: center; */
+	padding: 20px;
+}
+.Searchcontent {
+	padding: 5px;
+	width: 100%;
+	height: 50px;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	background-color: white;
+	align-items: center;
+	box-sizing: border-box;
+	border-radius: 10px;
+	/* border 1px solid  */
+	font-size: larger;
+}
+.Filterandcalendarbox {
+	min-height: 35vh;
+	height: 48vh;
+	width: 60%;
+	margin-top: 1% !important;
+	margin: auto;
+	overflow: auto;
+	border-radius: 40px;
+	background-color: rgb(255, 253, 253);
+	box-shadow: 0px 0px 2px 2px rgb(66, 66, 66);
+	border-radius: 40px;
+}
+
+.icon {
+	align-self: flex-end;
+	margin: 5px;
+	order: 1;
+	height: 100%;
+	font-size: 20px;
+	background: none;
+	border: none;
+	color: #7eeeaa;
+}
+.icon:hover {
+	cursor: pointer;
+
+	color: turquoise;
+}
+.icon:active {
+	outline: none;
+	border: none;
+	color: paleturquoise;
+}
+.icon:focus {
+	outline: none;
+}
+.Buttonbox {
+	/* align-self: right; */
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+	justify-content: flex-end;
+
+	/* order: 10; */
+	/* margin-right: auto; */
+	box-sizing: border-box;
+	/* border: solid black; */
+}

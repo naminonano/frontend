@@ -1,0 +1,160 @@
+.Signupbox {
+	min-height: 400px;
+	height: 70vh;
+	border-radius: 20px;
+	width: 40%;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	box-sizing: border-box;
+	position: fixed;
+	z-index: 500;
+	background-color: white;
+	border: 1px solid #ccc;
+	box-shadow: 1px 1px 1px black;
+	left: 30%;
+	top: 10%;
+
+	/* transition: all 1s ease-out; */
+}
+.Transition {
+	transform: translateY(100%);
+	-webkit-transform: translateY(100%);
+}
+.Loginbox {
+	min-height: 300px;
+	height: 50vh;
+	border-radius: 20px;
+	width: 60%;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	box-sizing: border-box;
+	position: fixed;
+	z-index: 500;
+	background-color: white;
+	border: 1px solid #ccc;
+	box-shadow: 1px 1px 1px black;
+	left: 20%;
+	top: 30%;
+	/* transform: translateY(100%);
+	-webkit-transform: translateY(100%); */
+	/* transition: all 1s ease-out; */
+}
+.Forgotpasswordbox {
+	min-height: 400px;
+	height: 70vh;
+	border-radius: 20px;
+	width: 40%;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	box-sizing: border-box;
+	position: fixed;
+	z-index: 500;
+	background-color: white;
+	border: 1px solid #ccc;
+	box-shadow: 1px 1px 1px black;
+	left: 30%;
+	top: 10%;
+	/* transform: translateY(100%);
+	-webkit-transform: translateY(100%); */
+	/* transition: all 1s ease-out; */
+}
+.Loginbox Input {
+	height: 15%;
+}
+.Input {
+	margin: auto;
+	margin-top: 1%;
+	margin-bottom: 2%;
+	width: 90%;
+	font-size: 150%;
+	height: 25%;
+	border-radius: 10px;
+	color: #7d7d7d;
+	box-sizing: border-box;
+	padding-left: 2%;
+}
+.Input:focus {
+	font-size: 150%;
+	border-radius: 10px;
+	color: #7d7d7d;
+	/* outline-offset: 0; */
+}
+.Input:active {
+}
+.Input:hover {
+	background-color: rgb(230, 230, 230);
+	cursor: pointer;
+}
+.Error {
+	background-color: salmon;
+}
+.ibox {
+	margin: auto;
+	border: salmon solid;
+	width: 70%;
+	height: 30%;
+}
+.Button {
+	width: 90%;
+	height: 10%;
+	border-radius: 15px;
+	margin: auto;
+}
+button:disabled {
+	pointer-events: none;
+}
+.Button:hover {
+	cursor: pointer;
+}
+.Background {
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 3;
+	opacity: 0.5;
+}
+span {
+	font-size: 100%;
+}
+
+span b {
+	text-decoration: underline;
+	font-size: 130%;
+}
+span b:hover {
+	cursor: pointer;
+}
+.tab {
+	display: inline-block;
+	margin-left: 5px;
+}
+.slidein {
+	animation: slide-in 0.7s forwards;
+	-webkit-animation: slide-in 0.7s forwards;
+}
+
+@keyframes slide-in {
+	100% {
+		transform: translateY(0%);
+	}
+}
+
+@-webkit-keyframes slide-in {
+	100% {
+		-webkit-transform: translateY(0%);
+	}
+}

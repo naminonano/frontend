@@ -1,0 +1,67 @@
+.list {
+	padding: 20px;
+	height: 50px;
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	align-items: flex-start;
+	justify-content: center;
+}
+.listrow {
+	padding: 10px;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	/* background-color: gray; */
+}
+.addbutton {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.listbox {
+	margin: auto;
+	width: 80%;
+	/* background-color: gray; */
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+.selected {
+	width: 100%;
+	height: 60px;
+	/* background-color: gray; */
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.yellow {
+	color: yellow;
+}
+.grey {
+	color: gray;
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+}
+.Buttonbox {
+	/* align-self: right; */
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+	justify-content: flex-end;
+
+	/* order: 10; */
+	/* margin-right: auto; */
+	box-sizing: border-box;
+	/* border: solid black; */
+}

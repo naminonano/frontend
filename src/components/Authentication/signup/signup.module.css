@@ -1,0 +1,55 @@
+.Signupbox {
+	min-height: 400px;
+	height: 50vh;
+	width: 30%;
+	margin: auto;
+	border: solid black;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	box-sizing: border-box;
+}
+.Input {
+	margin: auto;
+	margin-top: 1%;
+	margin-bottom: 5%;
+	width: 70%;
+	font-size: 150%;
+	border-radius: 10px;
+	color: #7d7d7d;
+	box-sizing: border-box;
+	padding-left: 2%;
+}
+.Input:focus {
+	font-size: 150%;
+	border-radius: 10px;
+	color: #7d7d7d;
+	/* outline-offset: 0; */
+}
+.Input:active {
+	background-color: darkblue;
+}
+.Input:hover {
+	background-color: rgb(230, 230, 230);
+	cursor: pointer;
+}
+.ibox {
+	margin: auto;
+	border: salmon solid;
+	width: 70%;
+	height: 30%;
+}
+.Button {
+	width: 20%;
+	height: 10%;
+	border-radius: 30px;
+	margin: auto;
+}
+button:disabled {
+	pointer-events: none;
+}
+.Button:hover {
+	cursor: pointer;
+}

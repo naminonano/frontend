@@ -1,0 +1,76 @@
+.Calendarbox {
+	width: 80%;
+	margin-left: 10%;
+	margin-top: 1%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	overflow: auto;
+	min-height: 300px;
+	height: 50vh;
+	/* width: 100%; */
+	background-color: rgb(255, 253, 253);
+	box-shadow: 0px 0px 2px 2px rgb(66, 66, 66);
+	border-radius: 40px;
+}
+.Monthtogglebox {
+	order: 0;
+}
+
+.Datepickerbox {
+	background-color: rgb(255, 255, 255);
+	padding-top: 0%;
+	order: 1;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+.Innerdatepickerbox {
+	/* border: solid blueviolet; */
+	margin-top: 0%;
+	width: 50%;
+	font-size: 100%;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+/* .tab {
+	display: inline-block;
+	margin-left: 20%;
+} */
+.Text {
+	/* background-color: chartreuse; */
+	font-size: 150%;
+	width: 80%;
+	margin-left: 10%;
+	padding-top: 5%;
+	display: flex;
+	flex-direction: row;
+	box-sizing: border-box;
+}
+
+.Lefticon {
+	align-self: center;
+	order: 0;
+	margin-right: 20%;
+}
+.Righttext {
+	/* background-color: chocolate; */
+	width: 80%;
+
+	margin-left: 10%;
+	font-size: 150%;
+	padding-top: 5%;
+	display: flex;
+	flex-direction: row;
+	box-sizing: border-box;
+	justify-content: flex-end;
+}
+.Righticon {
+	order: 3;
+	margin-left: 20%;
+	align-self: center;
+}
+.icon:hover {
+	cursor: pointer;
+	color: #7b7b7b;
+}
