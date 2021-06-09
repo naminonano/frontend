@@ -3,9 +3,7 @@ import axios from "axios";
 import classes from "../components/search/search.module.css";
 
 import Departuresearchbox from "../components/search/searchbox/departuresearchbox";
-import Arrivalsearchbox from "../components/search/searchbox/arrivalsearchbox";
 import Searchbutton from "../components/search/searchbutton";
-import Availableroute from "../components/availableroute/availableroute";
 import Auxi from "../HOC/Auxi";
 import * as action from "../store/action";
 import Spinner from "../UI/spinner/spinner";
@@ -69,7 +67,6 @@ const Search = (props) => {
 				{props.departure ? <Departurefilter val={props.departure} /> : null}
 
 				{props.arrival ? <Arrivalfilter val={props.arrival} /> : null}
-				{/* {props.showcalendar ? <Datepicker /> : null} */}
 				{props.showcalendar ? <Calendar /> : null}
 			</div>
 			{searchloading ? (
