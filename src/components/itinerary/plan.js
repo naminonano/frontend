@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./list.module.css";
 const Plan = (props) => {
 	let a = props.plan.map((i, j) => (
-		<div>
+		<div className={classes.plan}>
 			<h3>Day:{j + 1}</h3>
 			{i[2].map((k) => (
 				<div>{k}</div>

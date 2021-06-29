@@ -6,17 +6,26 @@ const Listbox = (props) => {
 
 	let ar = [];
 
-	let a = props.list.map((i) => (
-		<List
-			onClick={() => alert("cc")}
-			name={i["name"]}
-			website={i["website"]}
-			finaltype={i["finaltyoe"]}
-			totalreview={i["totalreview"]}
-			rating={i["rating"]}
-		/>
-	));
-	return <div className={classes.listbox}>{a}</div>;
+	let a = props.list.map((i) => {
+		if (i["finaltype"].includes(props.category.replaceAll("_", " "))) {
+			return (
+				<List
+					onClick={() => alert("cc")}
+					name={i["name"]}
+					// website={i["website"]}
+					finaltype={i["finaltype"]}
+					totalreview={i["totalreview"]}
+					rating={i["rating"]}
+				/>
+			);
+		}
+	});
+	return (
+		<div>
+			{props.category}
+			<div className={classes.listbox}>{a}</div>;
+		</div>
+	);
 };
 
 export default Listbox;

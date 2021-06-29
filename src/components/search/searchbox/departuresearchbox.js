@@ -2,7 +2,6 @@ import classes from "./searchbox.module.css";
 import React from "react";
 import { connect } from "react-redux";
 import * as action from "../../../store/action";
-// import Filterdeparture from "./filterdeparture";
 
 const Departuresearchbox = (props) => {
 	const val = props.departure;

@@ -25,3 +25,23 @@
 	display: flex;
 	flex-direction: row;
 }
+.cat {
+	background-color: white;
+	height: 40px;
+	padding: 10px;
+	box-sizing: border-box;
+	margin: 2px;
+	border-radius: 10px;
+}
+.cat:hover {
+	cursor: pointer;
+}
+.a {
+	height: 40px;
+	padding: 10px;
+	box-sizing: border-box;
+	margin: 2px;
+	border-radius: 10px;
+	color: white !important;
+	background-color: black !important;
+}

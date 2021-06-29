@@ -12,10 +12,13 @@ import Date from "../components/search/date/date";
 import Calendar from "../components/search/calendar/calendar";
 import Departurefilter from "../components/search/searchbox/filterdeparture";
 import Arrivalfilter from "../components/search/searchbox/filterarrival";
+import Timeselector from "../components/search/timeselector/timeselector";
 import Listbox from "../components/itinerary/listbox";
+
 const Search = (props) => {
 	const [content, setcontent] = useState();
-	const [searchloading, setsearchloading] = useState();
+	const [searchloading, setsearchloading] = useState(false);
+
 	const { fetchavialablecity } = props;
 	const search = () => {
 		setsearchloading(true);
@@ -43,7 +46,7 @@ const Search = (props) => {
 	useEffect(() => {
 		fetchavialablecity();
 	}, [fetchavialablecity]);
-	let selected = "selected attraction you want to visit";
+	let selected = [];
 	if (props.selectedattractions.length > 0) {
 		selected = props.selectedattractions;
 	}
@@ -57,6 +60,7 @@ const Search = (props) => {
 
 							<Date />
 						</div>
+
 						<Searchbutton click={search} />
 					</div>
 				</Auxi>

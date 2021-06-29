@@ -18,9 +18,6 @@ const List = (props) => {
 			{star.map((i) => (
 				<div>
 					<FontAwesomeIcon
-						// onClick={() => {
-						//     tonextmonth();
-						// }}
 						icon={i !== 0.5 ? faStar : faStarHalf}
 						size={"sm"}
 						className={i > 0 ? classes.yellow : classes.grey}
@@ -37,6 +34,7 @@ const List = (props) => {
 			<div>{props.website}</div>
 			<div>{st}</div>
 			<div> {props.totalreview}</div>
+			<button className={classes.cat}>Add to favorites</button>
 		</div>
 	);
 };

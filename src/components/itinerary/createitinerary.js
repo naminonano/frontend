@@ -38,7 +38,6 @@ const A = (props) => {
 		test[props.selected[i]] = Math.floor(Math.random() * 120) + 60;
 	}
 	const click = () => {
-		console.log(props.selected);
 		props.startload();
 		axios
 			.post("http://localhost:8000/graphql", q)
@@ -53,7 +52,7 @@ const A = (props) => {
 				info = { ...newinfo };
 
 				durationlist = res.data.data.getduration;
-				props.updateplan(create(test, 600, 1000));
+				props.updateplan(create(test, props.start, props.end));
 				props.stopload();
 			})
 			.catch((err) => console.log(err));
@@ -191,13 +190,13 @@ const A = (props) => {
 		for (let i in daydict) {
 			pp.push(daydict[i]);
 		}
-		console.log(pp);
 		return pp;
 	};
 	let buttons = (
 		<Button
+			disabled={props.selected.length === 0}
 			text="Create Itinerary"
-			addclass={"search"}
+			addclass={"create"}
 			onclick={() => click()}
 		/>
 	);

@@ -66,7 +66,6 @@ const List = (props) => {
 			<div className={classes.list} key={props.name}>
 				{score}
 				<div>{props.name}</div>
-				<div>{props.website}</div>
 				<div>{st}</div>
 				<div> {props.totalreview}</div>
 			</div>

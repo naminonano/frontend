@@ -3,6 +3,7 @@ import { Formik, Form, Field } from "formik";
 import classes from "../authentication.module.css";
 import axios from "axios";
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import * as action from "../../../store/action";
 import Spinner from "../../../UI/spinner/spinner";
@@ -25,21 +26,29 @@ const RegisterSchema = yup.object().shape({
 });
 const Signup = (props) => {
 	const [loading, setloading] = useState(false);
+	const his = useHistory();
+
 	const signupuser = (email, password) => {
+		const q = {
+			query: `
+			 mutation CreateNewUser($email: String!, $password: String!) {
+			    createuser(email: $email, password: $password)
+			 }
+			`,
+			variables: {
+				email: email,
+				password: password
+			}
+		};
 		setloading(true);
 		axios
-			.post(
-				`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCXdQHbG0mlL22TCJtUswdIMFLuTyTpxA4`,
-				{ email: email, password: password, returnSecureToken: true }
-			)
+			.post("http://localhost:8000/graphql", q)
 			.then((res) => {
-				setloading(false);
 				console.log(res);
-			})
-			.catch((err) => {
+				his.replace("/");
 				setloading(false);
-				console.log(err);
-			});
+			})
+			.catch((err) => console.log(err));
 	};
 
 	return (

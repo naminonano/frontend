@@ -58,7 +58,7 @@ const A = (props) => {
 				info = { ...newinfo };
 
 				durationlist = res.data.data.getduration;
-				props.updateplan(create(test, 600, 1000));
+				props.updateplan(create(test, props.start, props.end));
 				props.stopload();
 			})
 			.catch((err) => console.log(err));
