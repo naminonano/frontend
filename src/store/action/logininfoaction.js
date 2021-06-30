@@ -18,3 +18,6 @@ export const selectauth = (authmode) => {
 export const setlogintouch = (trueorfalse) => {
 	return { type: actiontype.SETLOGINTOUCH, trueorfalse: trueorfalse };
 };
+
+export const updatefav=fav=>{
+	return{type:"UPDATEFAV",favorite:fav}}

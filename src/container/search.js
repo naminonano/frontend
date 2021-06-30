@@ -22,23 +22,44 @@ const Search = (props) => {
 	const { fetchavialablecity } = props;
 	const search = () => {
 		setsearchloading(true);
-
-		const q = {
+		// const q = {
+		// 	query: `
+		// 	 query Getsim($email: String!) {
+		// 		getsim(email:$email) {
+		// 			name finaltype totalreview rating
+		// 		}
+		// 	 }
+		// 	`,
+		// 	variables: {
+		// 		email: 'najullawat@gmail.com',
+				
+		// 	}
+		// };
+		const q={
 			query: `
-			{
-				getsim(name:"nano",len:15) {
-					name finaltype totalreview website rating
+			
+				
+				query Getsim($email:String!){
+				getsim(email:$email){
+					name finaltype totalreview rating
 				}
 			}
+				
+			
 			`
-		};
+			,
+			variables: {
+				email: 'najullawat@gmail.com',
+			}}
+
+	
 
 		axios.post("http://localhost:8000/graphql", q).then((response) => {
+			console.log(response.data.data)
 			props.settopsim(response.data.data.getsim);
 			setcontent(response.data.data.getsim);
-			// props.updateroute(response.data);
 			setsearchloading(false);
-		});
+		}).catch(e=>console.log(e))
 
 		// .then((res) => props.setsearchnotloading());
 	};

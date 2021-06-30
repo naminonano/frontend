@@ -1,10 +1,11 @@
 import * as actiontype from "../../action/actiontypes";
 import { updateObject } from "../../../shared/utility/utility";
+import axios from 'axios'
 const initstate = {
 	login: true,
 	userid: 1,
 	loading: false,
-	myorder: null,
+	favorite:[],
 	authmode: "login",
 	logintouch: false
 };
@@ -30,6 +31,23 @@ const setlogintouchhandler = (state, action) => {
 		authmode: updateauthmode
 	});
 };
+const updatefav=(state,action)=>{
+	const q = {
+		query: `
+		 mutation Updatefav($email: String!, $favorite: [String]) {
+		    updatefav(email: $email, favorite:$favorite)
+		 }
+		`,
+		variables: {
+			email: 'najullawat@gmail.com',
+			favorite:action.favorite.length>0?action.favorite:[]
+		}
+	};
+	axios
+		.post("http://localhost:8000/graphql", q)
+		
+	
+	return updateObject(state,{favorite:action.favorite})}
 const userloginreducer = (state = initstate, action) => {
 	switch (action.type) {
 		case actiontype.FETCHMYORDERSTART:
@@ -42,6 +60,8 @@ const userloginreducer = (state = initstate, action) => {
 			return selectauthhandler(state, action);
 		case actiontype.SETLOGINTOUCH:
 			return setlogintouchhandler(state, action);
+		case "UPDATEFAV":
+			return updatefav(state,action)
 		default:
 			return state;
 	}

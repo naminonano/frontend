@@ -5,14 +5,24 @@ const Listbox = (props) => {
 	const [content, setcontent] = useState();
 
 	let ar = [];
-
+	
 	let a = props.list.map((i) => {
-		if (i["finaltype"].includes(props.category.replaceAll("_", " "))) {
+		if (props.category==="All"){
 			return (
 				<List
 					onClick={() => alert("cc")}
-					name={i["name"]}
-					// website={i["website"]}
+					name={i["name"]}					
+					finaltype={i["finaltype"]}
+					totalreview={i["totalreview"]}
+					rating={i["rating"]}
+				/>
+			);
+		}
+		else if (i["finaltype"].includes(props.category.replaceAll("_", " "))) {
+			return (
+				<List
+					onClick={() => alert("cc")}
+					name={i["name"]}					
 					finaltype={i["finaltype"]}
 					totalreview={i["totalreview"]}
 					rating={i["rating"]}

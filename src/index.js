@@ -6,13 +6,11 @@ import { BrowserRouter } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { createStore, combineReducers, applyMiddleware } from "redux";
-import createSagaMiddleware from "redux-saga";
 
 import searchreducer from "../src/store/reducer/search/searchreducer";
 import logininforeducer from "./store/reducer/userlogin/logininforeducer";
 import itineraryreducer from "./store/reducer/itinerary/itineraryreducer";
-import { watchlogin, watchsearchbox } from "./store/saga";
-const sagamiddleware = createSagaMiddleware();
+
 
 const combinereducer = combineReducers({
 	search: searchreducer,
@@ -21,9 +19,7 @@ const combinereducer = combineReducers({
 	logininfo: logininforeducer
 });
 
-const store = createStore(combinereducer, applyMiddleware(sagamiddleware));
-sagamiddleware.run(watchlogin);
-sagamiddleware.run(watchsearchbox);
+const store = createStore(combinereducer);
 ReactDOM.render(
 	<Provider store={store}>
 		<React.StrictMode>

@@ -23,6 +23,7 @@ export {
 	fetchmyorderupdateinfo,
 	selectauth,
 	setlogintouch
+	,updatefav
 } from "./logininfoaction";
 export { addselecteddate, removeselecteddate } from "./dateaction";
 export {

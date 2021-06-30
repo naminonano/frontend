@@ -2,13 +2,16 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Loading from "../UI/spinner/spinner";
 import Listbox from "../components/attraction/listbox";
-import Category from "../components/attraction/category";
+import { connect } from "react-redux";
+import * as action from '../store/action'
 import classes from "../components/attraction/list.module.css";
-const Attraction = () => {
+const Attraction = (props) => {
 	const [load, setload] = useState(true);
 	const [content, setcontent] = useState();
+	const [favorite,setfavorite] = useState()
 	const [c, selectedcat] = useState("");
 	const type = [
+		"All",
 		"market",
 		"art_gallery",
 		"shopping_mall",
@@ -61,15 +64,28 @@ const Attraction = () => {
 	];
 	useEffect(() => {
 		let ar = [];
+	
 
 		const q = {
 			query: `
-			{
+			
+				
+				query 
+				
+				Getuserinfo($email:String!){
 				getallinfo{
 					name finaltype totalreview rating
 				}
-			}
+				getuserinfo(email:$email){
+					locations
+				}}
+				
+			
 			`
+			,
+			variables: {
+				email: 'najullawat@gmail.com',
+			}
 		};
 
 		setload(true);
@@ -78,7 +94,8 @@ const Attraction = () => {
 		axios
 			.post("http://localhost:8000/graphql", q)
 			.then((res) => {
-				console.log(res);
+				
+				props.updatefav( res.data.data.getuserinfo['locations']);
 				res.data.data.getallinfo.map((i) => ar.push(i));
 
 				setcontent(ar);
@@ -105,14 +122,7 @@ const Attraction = () => {
 			{i.replaceAll("_", " ")}
 		</button>
 	));
-	let allbut = (
-		<button
-			className={!all ? classes.a : classes.cat}
-			onClick={() => clickall()}
-		>
-			All
-		</button>
-	);
+	
 	return (
 		<div>
 			{load ? (
@@ -120,14 +130,18 @@ const Attraction = () => {
 			) : (
 				<div>
 					<div>
-						{allbut}
+						{/* {allbut} */}
 						{cat}
 					</div>
-					<Listbox list={content} category={c} />
+					<Listbox list={content} category={c}  />
 				</div>
 			)}
 		</div>
 	);
 };
-
-export default Attraction;
+const matchdispatch = (dispatch) => {
+	return {
+		updatefav:(fav)=>dispatch(action.updatefav(fav))
+	};
+};
+export default connect( null,matchdispatch)(Attraction);

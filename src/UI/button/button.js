@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./button.module.css";
 const BUTTON = (props) => {
 	let disabled = null;
-	console.log(props.disabled);
+	
 	if (props.disabled === true) {
 		disabled = classes.disabled;
 	}
